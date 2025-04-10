@@ -1,4 +1,5 @@
 Proyecto de Base de Datos para la gestión del “Mercadito Puglierin”
+
 El repositorio contiene la Entrega Nro 1 del curso de SQL de Coderhouse.
 
 La idea del proyecto es crear una base de datos para la gestión de clientes, proveedores, productos y pedidos del “Mercadito Puglierin”.
