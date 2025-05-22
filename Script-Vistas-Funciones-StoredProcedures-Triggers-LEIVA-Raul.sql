@@ -1,3 +1,6 @@
+-- usamos la Base de datos MercaditoPuglierin
+
+USE MercaditoPuglierin;
 
 /*-------------------- Creacion de Vistas --------------------*/
 
