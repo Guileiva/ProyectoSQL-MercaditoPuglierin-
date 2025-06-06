@@ -1,4 +1,4 @@
-##Proyecto de Base de Datos para la gestión del “Mercadito Puglierin”
+## Proyecto de Base de Datos para la gestión del “Mercadito Puglierin”
 
 El repositorio contiene la Entrega Final del curso de SQL de Coderhouse.
 
