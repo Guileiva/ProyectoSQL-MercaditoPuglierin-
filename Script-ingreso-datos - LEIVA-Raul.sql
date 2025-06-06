@@ -2,7 +2,7 @@
 
 USE mercaditopuglierin;
 
--- Insertamos los datos en las tablas
+-- INSERTAMOS LOS DATOS EN LAS TABLAS --
 
 -- Tabla tipo_documento
 
@@ -49,10 +49,10 @@ INSERT INTO cliente (Nombre, Apellido, Tipo_Documento, Numero_Documento, Direcci
 VALUES
 	("Francisco", "Alvarez", 1, "33526952", "9 de julio 1532", 6, 3516359426, "fran_alvarez@gmail.com"),
 	("Jimena", "Loperato", 1, "25364785", "Obispo Oro 345", 6, 3513452159, "jloperato@gmail.com"),
-    ("Sofia", "Muñoz", 5, "AAH800715", "Caseros 100", 6, 3515895423, "sofi87@yahoo.com"),
+    ("Sofia", "Gomez", 5, "AAH800715", "Caseros 100", 6, 3515895423, "sofi87@yahoo.com"),
     ("Amilcar", "Vicario", 1, "40568124", "Av. Virgen del Valle 789", 3, 3834368741, "a_milcar@gmail.com"),
     ("Adrian", "Roccio", 5, "ABR700587", "Duarte Quiros 2145", 6, 3513251547, "aroccio@hotmail.com"),
-    ("Miriam", "Gauna", 1, "23564833", "Av. Santa Fe 167", 6, 3512456879, "ga_miri@gmail.com"),
+    ("Miriam", "Garcia", 1, "23564833", "Av. Santa Fe 167", 6, 3512456879, "ga_miri@gmail.com"),
     ("Francisco", "Vera", 1, "40568452", "Manuel Esteban Pizarro 1899", 6, 3515856532, "veravera87@ncr.com.ar"),
     ("Cecilia", "Amarillo", 1, "30411537", "Av. Libertad 43", 2, 1152456874, "chechuyellow@gmail.com"),
 	("Gonzalo", "Vaquero", 1, "45456874", "Ciudad de la Paz 456", 1, 1123654125, "gonvaquero@frc.utn.edu.ar"),
@@ -266,8 +266,8 @@ VALUES
     (35, 5, 1750.00, 2),
     (42, 5, 4900.00, 3),
     (43, 5, 3500.00, 3),
-    (45, 10, 17500.00, 4),
-    (47, 10, 17500.00, 4),
+    (45, 5, 17500.00, 4),
+    (47, 5, 17500.00, 4),
     (50, 8, 2884.00, 5),
     (53, 8, 2884.00, 5);
     

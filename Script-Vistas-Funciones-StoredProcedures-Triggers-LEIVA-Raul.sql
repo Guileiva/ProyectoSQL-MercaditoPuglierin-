@@ -1,8 +1,8 @@
--- usamos la Base de datos MercaditoPuglierin
+-- Seleccionamos la base de datos mercaditopuglierin
 
-USE MercaditoPuglierin;
+USE mercaditopuglierin;
 
-/*-------------------- Creacion de Vistas --------------------*/
+/*-------------------- CREACION DE VISTAS --------------------*/
 
 -- VISTA de Historial de Compras por Proveedor con sus Artículos
 
@@ -13,14 +13,24 @@ JOIN compra c ON p.id_proveedor = c.Proveedor
 JOIN detalle_compra dc ON c.Nro_orden_compra = dc.Nro_Compra
 JOIN producto pr ON dc.Producto = pr.id_producto;
 
--- VISTA de Historial de Compras por Cliente
+-- VISTA de Historial de Ventas por Cliente
 
-CREATE OR REPLACE VIEW VistaHistorialComprasxCliente AS 
-SELECT c.Nombre, c.Apellido, pr.Nombre_producto, dp.Precio_Unitario, p.Fecha_pedido
+CREATE OR REPLACE VIEW VistaHistorialVentasxCliente AS 
+SELECT CONCAT(c.Nombre,' ',c.Apellido) AS Cliente, pr.Nombre_producto, (dp.Cantidad*dp.Precio_Unitario) AS "Monto Total", p.Fecha_pedido
 FROM cliente c
 JOIN pedido p ON p.Cliente = c.id_cliente
 JOIN detalle_pedido dp ON p.id_pedido = dp.Pedido
 JOIN producto pr ON dp.Producto = pr.id_producto;
+
+-- VISTA Cantidad Total de Ventas por Cliente 
+
+CREATE OR REPLACE VIEW VistaCantidadTotalVentasxCliente AS 
+SELECT c.Nombre, c.Apellido, COUNT(p.id_pedido) AS "Cantidad Total"
+FROM cliente c
+JOIN pedido p ON p.Cliente = c.id_cliente
+GROUP BY c.Nombre, c.Apellido
+ORDER BY COUNT(p.id_pedido) DESC
+LIMIT 5;
 
 -- VISTA de Productos mas Vendidos
 
@@ -41,7 +51,7 @@ LEFT JOIN compra c ON c.Proveedor = p.id_proveedor
 GROUP BY p.Razon_Social; 
 
 
-/*-------------------- Creacion de Funciones --------------------*/
+/*-------------------- CREACION DE FUNCIONES --------------------*/
 
 -- Funcion para calcular el total de compras de un cliente
 
@@ -116,7 +126,7 @@ BEGIN
 END //
 
 
-/*-------------------- Creacion de Stored Procedures --------------------*/
+/*-------------------- CREACION DE STORED PROCEDURES --------------------*/
 
 -- Stored Procedure para insertar un nuevo cliente
 
@@ -266,7 +276,7 @@ DELIMITER ;
 
 
 
-/*-------------------- Creacion de Triggers --------------------*/
+/*-------------------- CREACION DE TRIGGERS --------------------*/
 
 -- Trigger para actualizar el precio y la cantidad de un producto luego de realizar una compra
 

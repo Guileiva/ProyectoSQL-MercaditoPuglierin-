@@ -6,7 +6,7 @@ CREATE DATABASE IF NOT EXISTS MercaditoPuglierin;
 
 USE MercaditoPuglierin;
 
--- Se crean las tablas 
+-- CREACION DE LAS TABLAS --
 
 -- Tabla Tipo_Documento
 CREATE TABLE tipo_documento (
